@@ -46,6 +46,8 @@ RUN yum -y update yum && \
     $HOME/install_ldm.sh && \
     $HOME/install_ldm_root_actions.sh
 
+RUN dnf update -y kernel-headers kernel-devel
+RUN dnf install -y git-2.43.5-1.el8_10
 COPY runldm.sh $HOME/bin/
 RUN chmod +x $HOME/bin/runldm.sh
 
